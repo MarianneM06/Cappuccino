@@ -42,7 +42,7 @@ th {
     flex-direction: column;
     -webkit-box-shadow : 12px 12px 28px 4px rgba(0,0,0,0.41);
     -moz-box-shadow : 12px 12px 28px 4px rgba(0,0,0,0.41);
-    ombre de la boîte : 12px 12px 28px 4px rgba(0,0,0,0.41) ;
+    box-shadow: 12px 12px 28px 4px rgba(0,0,0,0.41) ;
 }
 
 .submitButton {
