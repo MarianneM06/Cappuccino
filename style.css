@@ -1,0 +1,45 @@
+.container {
+    display: grid;
+    height: 250vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr 0.3fr 0.1fr;
+    grid-template-areas: 
+        "header header "
+        "content1 content2"
+        "nav nav"
+        "footer footer";
+    grid-gap: 0.5rem;
+}
+
+header {
+    border: solid black 3px;
+    border-radius: 10px;
+    grid-area: header;
+}
+
+.content1 {
+    border: solid black 3px;
+    grid-area: content1;
+    border-radius: 10px;
+}
+
+.content2 {
+    border: solid black 3px;
+    grid-area: content2;
+    border-radius: 10px;
+}
+
+nav {
+    border: solid black 3px;
+    grid-area: nav;
+    border-radius: 10px;
+}
+
+footer {
+    border: solid black 3px;
+    grid-area: footer;
+    border-radius: 10px;
+}
+
+
+
