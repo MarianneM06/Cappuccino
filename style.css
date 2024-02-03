@@ -25,6 +25,10 @@ th {
     color: white;
 }
 
+.content1 {
+    grid-area: content1;
+}
+
 .forumContainer {
     
      
