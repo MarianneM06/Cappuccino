@@ -4,91 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Caffé Gourmand</title>
+    <title>PLAISIR GOURMAND</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <main class="maincontainer">
+    <main>
 
-        <div class="imagcontainer">
-            <img class="image" src="immagini/formule petit déjeuner.jpeg" alt="">
-            <div class="ecrictureslaid">>
-                <h1>Formule<br>petit déjeuner</h1>
-                <H2>stock</H2>
-            </div>
-        </div>
 
-        <div class="imagcontainer">
-            <img class="image" src="immagini/cafelatte (3).jpeg" alt="">
-            <divc class="ecrictureslaid">
-                <h1>Caffé Latté</h1>
-                <h2>stock</h2>
-        </div>
-        </div>
-        </div>
-        <div class="imagcontainer">
-            <img class="image" src="immagini/cappuccino.jpeg" alt="">
-            <div class="ecrictureslaid">
-                <h1>Cappuccino</h1>
-                <h2>stock</h2>
-            </div>
-        </div>
-        </div>
-        <div class="imagcontainer"><img class="image" src="immagini/caffe.jpeg" alt="">
-            <div class="ecrictureslaid">
-                <h1>Caffé</h1>
-                <h2>stock</h2>
-            </div>
-        </div>
-        </div>
-        <div class="imagcontainer">
-            <img class="image" src="immagini/San pellegrino.jpeg" alt="">
-            <div class="ecrictureslaid">
-                <h1>Eau<br>San pellegrino</h1>
-                <h2>stock</h2>
-            </div>
+        <div class="container">
+            <header>
+                <video autoplay muted loop id="videoHeader">
+                    <source src="./videos/video Background.mp4" type="video/mp4">
+                </video>
+            </header>
+            <form class="forumContainer">
 
-        </div>
-        </div>
-        <div class="imagcontainer"><img class="image" src="immagini/fanta.jpeg" alt="">
-            <div class="ecrictureslaid">
-                <h1>Fanta</h1>
-                <h2>stock</h2>
-            </div>
-        </div>
-        </div>
-        </div>
-        <div class="imagcontainer"><img class="image" src="immagini/cocacola.jpeg" alt="">
-            <div class="ecrictureslaid">
-                <h1>Coca cola</h1>
-                <h2>stock</h2>
-            </div>
-        </div>
-        </div>
-        <div class="imagcontainer"><img class="image" src="immagini/spritz.jpeg" alt="">
-            <div class="ecrictureslaid">
-                <h1>Spritz</h1>
-                <h2>stock</h2>
-            </div>
-        </div>
-        </div>
-        <div class="imagcontainer"><img class="image" src="immagini/Ricard.jpeg" alt="">
-            <div class="ecrictureslaid">
-                <h1>Ricard</h1>
-                <h2>stock</h2>
-            </div>
-        </div>
-        </div>
-        <div class="imagcontainer"><img class="image" src="immagini/limoncello.jpeg" alt="">
-            <div class="ecrictureslaid">
-                <h1>Limoncello</h1>
-                <h2>stock</h2>
-            </div>
-        </div>
-    </main>
 
-    <script src="index.js"></script>
+                <label class="label" for="drinkName">Nom de la Boisson:</label>
+                <input class="input" type="text" id="drinkName" name="drinkName" placeholder="renseignez le nom"
+                    required>
+                <label class="label" for="quantity">Quantité:</label>
+                <input class="input" type="number" id="quantity" name="quantity" placeholder="renseignez la quantité"
+                    required>
+
+                <label class="label" for="purchasePrice">Prix d'achat:</label>
+                <input class="input" type="number" id="purchase price" name="purchase price"
+                    placeholder="Le prix d'achat" required>
+
+                <label class="label" for="marginHT">Marge HT:</label>
+                <input class="input" type="number" id="marginHT" name="marginHT" placeholder="La marge HT" required>
+
+                <label class="label" for="selling price">Prix de vente:</label>
+                <input class="input" type="number" id="sellingPrice" name="selling price" placeholder="Le prix de vente"
+                    required>
+
+                <label class="label" for="category">Catégorie:</label>
+                <select class="input" id="category" name="category">
+                    <option value="selection">Sélectionner la catégorie</option>
+                    <option value="soda">Boisson Gazeuse</option>
+                    <option value="Alcool">Boisson Alcoolisée</option>
+                    <option value="juice">Jus de Fruits</option>
+                    <option value="water">Eau</option>
+                    <option value="coffee">Café</option>
+                </select>
+
+                <label class="label" for="category">Degrés d'alcool:</label>
+                <select class="input" id="alcoholLevels" name="alcohoLevels">
+                    <option value="Alcool">Sélectionner le degrés d'alcool</option>
+                    <option value="Alcool">Faible teneur : entre 0.5 et 1.2%</option>
+                    <option value="Alcool">Léger : entre 2 et 4%</option>
+                    <option value="Alcool">Standard : entre 4 et 6%</option>
+                    <option value="Alcool">Fort : entre 7 et 10%</option>
+                    <option value="Alcool">Trés fort : supérieur à 10%</option>
+                    <option value="Alcool">Spirituex : supérieur à 40%</option>
+                </select>
+
+                <button class="submitButton" type="submit">Ajouter au Stock</button>
+
+
+            </form>
+            <div class="content2">CONTENT 2</div>
+        
+            <main class="maincontainer" >
+
+                <div class="imagcontainer" id="fpd">
+                    <img class="image" src="immagini/formule petit déjeuner.jpeg" alt="">
+                    <div class="ecrictureslaid">
+                        <h1>Formule<br>petit déjeuner</h1>
+                        <H2>stock</H2>
+                    </div>
+                </div>
+        
+                <div class="imagcontainer" id="cl">
+                    <img class="image" src="immagini/cafelatte (3).jpeg" alt="">
+                    <divc class="ecrictureslaid">
+                        <h1>Caffé Latté</h1>
+                        <h2>stock</h2>
+                </div>
+              
+                <div class="imagcontainer" id="ca">
+                    <img class="image" src="immagini/cappuccino.jpeg" alt="">
+                    <div class="ecrictureslaid">
+                        <h1>Cappuccino</h1>
+                        <h2>stock</h2>
+                    </div>
+                </div>
+               
+                <div class="imagcontainer" id="cs"><img class="image" src="immagini/caffe.jpeg" alt="">
+                    <div class="ecrictureslaid">
+                        <h1>Caffé</h1>
+                        <h2>stock</h2>
+                    </div>
+                </div>
+            
+                <div class="imagcontainer"id="esp">
+                    <img class="image" src="immagini/San pellegrino.jpeg" alt="">
+                    <div class="ecrictureslaid">
+                        <h1>Eau<br>San pellegrino</h1>
+                        <h2>stock</h2>
+                    </div>
+        
+                </div>
+                
+                <div class="imagcontainer" id="f"><img class="image" src="immagini/fanta.jpeg" alt="">
+                    <div class="ecrictureslaid">
+                        <h1>Fanta</h1>
+                        <h2>stock</h2>
+                    </div>
+                </div>
+
+                <div class="imagcontainer"id="cc"><img class="image" src="immagini/cocacola.jpeg" alt="">
+                    <div class="ecrictureslaid">
+                        <h1>Coca cola</h1>
+                        <h2>stock</h2>
+                    </div>
+                </div>
+            
+                <div class="imagcontainer" id="s"><img class="image" src="immagini/spritz.jpeg" alt="">
+                    <div class="ecrictureslaid">
+                        <h1>Spritz</h1>
+                        <h2>stock</h2>
+                    </div>
+                </div>
+        
+                <div class="imagcontainer" id="r"><img class="image" src="immagini/Ricard.jpeg" alt="">
+                    <div class="ecrictureslaid">
+                        <h1>Ricard</h1>
+                        <h2>stock</h2>
+                    </div>
+                </div>
+          
+                <div class="imagcontainer" id="l"><img class="image" src="immagini/limoncello.jpeg" alt="">
+                    <div class="ecrictureslaid">
+                        <h1>Limoncello</h1>
+                        <h2>stock</h2>
+                    </div>
+                </div>
+            </main>
+        
+       
+  
+
+
+    
+        <footer>FOOTER</footer>
+    
+
+
+
+
+    <script src="./index.js"></script>
 </body>
 
 </html>
