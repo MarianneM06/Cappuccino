@@ -67,12 +67,5 @@ function displayAlcoolLvl() {
     }
 }
 
-// if(quantity.value < 0 || purshasePrice.value < 0 || marginHT.value < 0 || sellingPrice.value < 0 ) {
-//     submitButton.addEventListener("error", (e) => {
-//         alert("Le chiffre ne peux être inferieur à 0");
-//     })
-// } else {
-
-// }
 
 
