@@ -8,6 +8,8 @@ let alcoholLevels = document.getElementById("alcoholLevels");
 let labelalcoholLvl = document.getElementById("labelalcoholLvl");
 let listproduct;
 let submitButton = document.querySelector(".submitButton");
+let childContainer = document.querySelector(".childContainer");
+
 
 // si la liste de produit existe alors on l'affiche sur le local storage
 if (JSON.parse(localStorage.getItem("listproduct"))) {
@@ -66,6 +68,61 @@ function displayAlcoolLvl() {
         labelalcoholLvl.style.textAlign = "center";
     }
 }
+
+let titleJus = document.querySelector(".titleJus");
+let titleEau = document.querySelector(".titleEau");
+let titleRose = document.querySelector(".titleRose");
+let titleCafe = document.querySelector(".titleCafe");
+let titleSoda = document.querySelector(".titleSoda");
+let imgJus = document.getElementById("imgJus");
+let imgEau = document.getElementById("imgEau");
+let imgRose = document.getElementById("imgRose");
+let imgCafe = document.getElementById("imgCafe");
+let imgSoda = document.getElementById("imgSoda");
+
+
+
+imgJus.addEventListener("mouseover", (event) => {
+    titleJus.style.display = "block";
+});
+
+imgJus.addEventListener("mouseout", (event) => {
+    titleJus.style.display = "none";
+});
+
+imgEau.addEventListener("mouseover", (event) => {
+    titleEau.style.display = "block";
+});
+
+imgEau.addEventListener("mouseout", (event) => {
+    titleEau.style.display = "none";
+});
+
+imgRose.addEventListener("mouseover", (event) => {
+    titleRose.style.display = "block";
+});
+
+imgRose.addEventListener("mouseout", (event) => {
+    titleRose.style.display = "none";
+});
+
+imgCafe.addEventListener("mouseover", (event) => {
+    titleCafe.style.display = "block";
+});
+
+imgCafe.addEventListener("mouseout", (event) => {
+    titleCafe.style.display = "none";
+});
+
+imgSoda.addEventListener("mouseover", (event) => {
+    titleSoda.style.display = "block";
+});
+
+imgSoda.addEventListener("mouseout", (event) => {
+    titleSoda.style.display = "none";
+});
+
+
 
 
 

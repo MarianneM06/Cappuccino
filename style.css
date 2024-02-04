@@ -178,7 +178,7 @@ img {
     left: 68%;
 }
 
-.titleBoissGazeuse {
+.titleSoda {
     z-index: 2;
     position: absolute;
     top: 32%;
@@ -193,6 +193,4 @@ footer {
     grid-area: footer;
     border-radius: 10px;
 }
-
-
 
