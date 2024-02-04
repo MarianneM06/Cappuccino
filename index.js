@@ -6,7 +6,10 @@ let sellingPrice = document.getElementById("sellingPrice");
 let category = document.getElementById("category");
 let alcoholLevels = document.getElementById("alcoholLevels");
 
-let listproducts = [];
+let submitButton = document.querySelector(".submitButton");
+let detailsButton = document.querySelector("detailsButton");
+
+let listproducts;
 
 
 let listSaved = JSON.parse(localStorage.getItem("listProduits"));

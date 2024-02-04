@@ -185,6 +185,12 @@ nav {
     border: solid black 3px;
     grid-area: nav;
     border-radius: 10px;
+    
+}
+
+.productContent {
+    display: flex;
+    justify-content: space-around;
 }
 
 footer {
