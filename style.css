@@ -133,8 +133,7 @@ nav {
 }
 
 .childContainer {
-    width: 243px;
-    height: 232px;
+    
 }
 
 img {
@@ -146,14 +145,48 @@ img {
 .titleJus {
     z-index: 2;
     position: absolute;
-    left: 76px;
-    top: 38%;
-    font-size: 26px;
+    left: 46px;
+    top: 32%;
+    font-size: 35px;
     color: white;
 }
 
+.titleEau {
+    z-index: 2;
+    position: absolute;
+    top: 30%;
+    font-size: 35px;
+    color: white;
+    left: 28%;
+}
 
+.titleRose {
+    z-index: 2;
+    position: absolute;
+    top: 32%;
+    font-size: 35px;
+    color: white;
+    left: 47%;
+}
 
+.titleCafe {
+    z-index: 2;
+    position: absolute;
+    top: 32%;
+    font-size: 35px;
+    color: white;
+    left: 68%;
+}
+
+.titleBoissGazeuse {
+    z-index: 2;
+    position: absolute;
+    top: 32%;
+    font-size: 35px;
+    color: white;
+    left: 88%;
+
+}
 
 footer {
     border: solid black 3px;
