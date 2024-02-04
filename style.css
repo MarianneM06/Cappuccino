@@ -87,11 +87,12 @@ button:hover {
     display: grid;
     height: 250vh;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 0.5fr 0.5fr 0.3fr 0.1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr 1fr 0.1fr;
     grid-template-areas: 
         "header header "
-        "content1 content2"
+        "content1 content1"
         "nav nav"
+        "content2 content2"
         "footer footer";
     grid-gap: 0.5rem;
 }
@@ -146,45 +147,50 @@ img {
     z-index: 2;
     position: absolute;
     left: 46px;
-    top: 32%;
+    top: 23%;
     font-size: 35px;
     color: white;
+    display: none;
 }
 
 .titleEau {
     z-index: 2;
     position: absolute;
-    top: 30%;
+    top: 23%;
     font-size: 35px;
     color: white;
     left: 28%;
+    display: none;
 }
 
 .titleRose {
     z-index: 2;
     position: absolute;
-    top: 32%;
+    top: 23%;
     font-size: 35px;
     color: white;
     left: 47%;
+    display: none;
 }
 
 .titleCafe {
     z-index: 2;
     position: absolute;
-    top: 32%;
+    top: 23%;
     font-size: 35px;
     color: white;
     left: 68%;
+    display: none;
 }
 
 .titleSoda {
     z-index: 2;
     position: absolute;
-    top: 32%;
+    top: 23%;
     font-size: 35px;
     color: white;
     left: 88%;
+    display: none;
 
 }
 

@@ -9,11 +9,17 @@ let labelalcoholLvl = document.getElementById("labelalcoholLvl");
 let listproduct;
 let submitButton = document.querySelector(".submitButton");
 let childContainer = document.querySelector(".childContainer");
+let stockJus = document.querySelector(".stockJus");
+let stockEau = document.querySelector(".stockEau");
+
+
+
 
 
 // si la liste de produit existe alors on l'affiche sur le local storage
 if (JSON.parse(localStorage.getItem("listproduct"))) {
     listproduct = JSON.parse(localStorage.getItem("listproduct"));
+
 } else {
    listproduct = [];
 }
@@ -42,6 +48,8 @@ submitButton.addEventListener("click", (event) => {
     
      // on affiche le selecteur du degré d'alcool
     displayAlcoolLvl();
+
+
     
 });
 
@@ -68,6 +76,7 @@ function displayAlcoolLvl() {
         labelalcoholLvl.style.textAlign = "center";
     }
 }
+
 
 
 // On récupere les elements html de la nav 
@@ -126,5 +135,25 @@ imgSoda.addEventListener("mouseout", (event) => {
 
 
 
+// on recupere les elements  html details button 
+let btnJus = document.querySelector(".btnJus");
+let btnEau = document.querySelector(".btnEau");
+let btnRose = document.querySelector(".btnRose");
+let btnCafe = document.querySelector(".btnCafe");
+let btnSoda = document.querySelector(".btnSoda");
+
+// on crée les elements qui s'afficheront au click dans le content 2
 
 
+// Au click creation des infos produits dans content 2 
+btnJus.addEventListener("click", () => {
+
+})
+
+
+
+function quantiteJus () {
+    if(category.value === "Jus de Fruits") {
+
+    }
+}
