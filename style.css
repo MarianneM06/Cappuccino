@@ -188,9 +188,39 @@ img {
 
 }
 
+.txtQuantite {
+    position: relative;
+    left: 32px;
+}
+
+
+.btnJus {
+    position: relative;
+    left: 35%;
+}
+
+.btnEau {
+    position: relative;
+    left: 35%;
+}
+
+.btnRose {
+    position: relative;
+    left: 35%
+}
+
+.btnCafe {
+    position: relative;
+    left: 35%
+}
+
+.btnSoda {
+    position: relative;
+    left: 38%;
+}
+
 footer {
     border: solid black 3px;
     grid-area: footer;
     border-radius: 10px;
 }
-

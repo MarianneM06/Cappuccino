@@ -69,6 +69,8 @@ function displayAlcoolLvl() {
     }
 }
 
+
+// On récupere les elements html de la nav 
 let titleJus = document.querySelector(".titleJus");
 let titleEau = document.querySelector(".titleEau");
 let titleRose = document.querySelector(".titleRose");
@@ -81,7 +83,7 @@ let imgCafe = document.getElementById("imgCafe");
 let imgSoda = document.getElementById("imgSoda");
 
 
-
+// MOUSEOVER et MOUSEOUT sur les img 
 imgJus.addEventListener("mouseover", (event) => {
     titleJus.style.display = "block";
 });
