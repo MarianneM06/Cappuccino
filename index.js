@@ -18,12 +18,6 @@ let stockEau = document.querySelector(".stockEau");
 let deleteButton = document.createElement("button");
 let supprimer = document.querySelector(".supprimer");
 
-// creation de la fonction bouton supprimer 
-function editTask(deleteButton) {
-        supprimer.innerHTML = "SUPPRIMER"
-        supprimer.appendChild(deleteButton);
-    
-}
 
 
 // si la liste de produit existe alors on l'affiche sur le local storage
@@ -34,12 +28,25 @@ if (JSON.parse(localStorage.getItem("listproduct"))) {
    listproduct = [];
 }
 
+function deleteRaw() {
+   
+        deleteButton.addEventListener("click", () => {
 
+            if (window.confirm("Voulez vous supprimer cet article du stock ?")) {
+                
+            }
 
+            })
+    
+}
 
 // function qui affiche la valeur du local storage dans le tableau HTML
 function addRaw() {
+
+        
     
+        deleteButton.innerText = "Supprimer"
+        deleteButton.style.width = "100%"
 
     
         const table = document.getElementsByTagName("table")[0];
@@ -52,6 +59,7 @@ function addRaw() {
         let cel5 = newRow.insertCell (4);
         let cel6 = newRow.insertCell (5);
         let cel7 = newRow.insertCell (6);
+        let cel8 = newRow.insertCell (7);
 
         cel1.innerHTML = `${drinkname.value}`;
         cel2.innerHTML = `${quantity.value}`;
@@ -60,9 +68,12 @@ function addRaw() {
         cel5.innerHTML = `${sellingPrice.value}`;
         cel6.innerHTML = `${category.value}`;
         cel7.innerHTML = `${alcoholLevels.value}`;
+        
+        cel8.appendChild(deleteButton);
+        deleteRaw();
+    
     
 }
-
 
 
 // on cache le selecteur degré d'alcool 
