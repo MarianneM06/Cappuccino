@@ -14,15 +14,56 @@ let stockEau = document.querySelector(".stockEau");
 
 
 
+// creation du bouton supprimer
+let deleteButton = document.createElement("button");
+let supprimer = document.querySelector(".supprimer");
+
+// creation de la fonction bouton supprimer 
+function editTask(deleteButton) {
+        supprimer.innerHTML = "SUPPRIMER"
+        supprimer.appendChild(deleteButton);
+    
+}
 
 
 // si la liste de produit existe alors on l'affiche sur le local storage
 if (JSON.parse(localStorage.getItem("listproduct"))) {
     listproduct = JSON.parse(localStorage.getItem("listproduct"));
-
+    
 } else {
    listproduct = [];
 }
+
+
+
+
+// function qui affiche la valeur du local storage dans le tableau HTML
+function addRaw() {
+    
+
+    
+        const table = document.getElementsByTagName("table")[0];
+        const newRow = table.insertRow(1);
+
+        let cel1 = newRow.insertCell (0);
+        let cel2 = newRow.insertCell (1);
+        let cel3 = newRow.insertCell (2);
+        let cel4 = newRow.insertCell (3);
+        let cel5 = newRow.insertCell (4);
+        let cel6 = newRow.insertCell (5);
+        let cel7 = newRow.insertCell (6);
+
+        cel1.innerHTML = `${InfoProduct.name}`;
+        cel2.innerHTML = `${InfoProduct.quantite}`;
+        cel3.innerHTML = `${InfoProduct.prixAchat}`;
+        cel4.innerHTML = `${InfoProduct.marginHt}`;
+        cel5.innerHTML = `${InfoProduct.prixDeVente}`;
+        cel6.innerHTML = `${InfoProduct.categorie}`;
+        cel7.innerHTML = `${InfoProduct.alcoholLvl}`;
+    
+}
+
+
 
 // on cache le selecteur degré d'alcool 
 displayAlcoolLvl();
@@ -33,7 +74,7 @@ submitButton.addEventListener("click", (event) => {
     event.preventDefault()
 
     // on ajoute a info prduit (InfoProduct) les valeurs récupérées du form
-    let infoProduct = new InfoProduct(drinkname.value, quantity.value, purchasePrice.value, marginHT.value, sellingPrice.value, category.value, alcoholLevels.value);
+    const infoProduct = new InfoProduct(drinkname.value, quantity.value, purchasePrice.value, marginHT.value, sellingPrice.value, category.value, alcoholLevels.value);
     // on appelle la fonction InfoProduct dans notre evenement "click" avec les valeurs récupérées de la varible (let infoProduct)
     InfoProduct(drinkname, quantity, purchasePrice, marginHT, sellingPrice, category);
     
@@ -49,6 +90,7 @@ submitButton.addEventListener("click", (event) => {
      // on affiche le selecteur du degré d'alcool
     displayAlcoolLvl();
 
+    addRaw();
 
     
 });
@@ -147,13 +189,14 @@ let btnSoda = document.querySelector(".btnSoda");
 
 // Au click creation des infos produits dans content 2 
 btnJus.addEventListener("click", () => {
-
+    
 })
 
 
 
 function quantiteJus () {
     if(category.value === "Jus de Fruits") {
-
+        
     }
 }
+
