@@ -44,7 +44,7 @@ function addRaw() {
     
         const table = document.getElementsByTagName("table")[0];
         const newRow = table.insertRow(1);
-
+        
         let cel1 = newRow.insertCell (0);
         let cel2 = newRow.insertCell (1);
         let cel3 = newRow.insertCell (2);
@@ -53,13 +53,13 @@ function addRaw() {
         let cel6 = newRow.insertCell (5);
         let cel7 = newRow.insertCell (6);
 
-        cel1.innerHTML = `${InfoProduct.name}`;
-        cel2.innerHTML = `${InfoProduct.quantite}`;
-        cel3.innerHTML = `${InfoProduct.prixAchat}`;
-        cel4.innerHTML = `${InfoProduct.marginHt}`;
-        cel5.innerHTML = `${InfoProduct.prixDeVente}`;
-        cel6.innerHTML = `${InfoProduct.categorie}`;
-        cel7.innerHTML = `${InfoProduct.alcoholLvl}`;
+        cel1.innerHTML = `${drinkname.value}`;
+        cel2.innerHTML = `${quantity.value}`;
+        cel3.innerHTML = `${purchasePrice.value}`;
+        cel4.innerHTML = `${marginHT.value}`;
+        cel5.innerHTML = `${sellingPrice.value}`;
+        cel6.innerHTML = `${category.value}`;
+        cel7.innerHTML = `${alcoholLevels.value}`;
     
 }
 
