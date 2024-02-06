@@ -8,7 +8,6 @@ body {
 
 .entête {
     
-    background-color:rgb(129, 105, 105);
     display: flex;
     justify-content: space-between;
     border-bottom: solid rgb(241, 161, 56);
@@ -23,6 +22,11 @@ body {
     margin-top: 40px;
     font-size: xx-large;
     font-family: cursive;
+}
+
+.container img {
+    width: 170px;
+    height: 80px;
 }
 
 
@@ -67,6 +71,7 @@ body {
 }
 
 
+    
 
 
 table {
@@ -74,6 +79,8 @@ table {
     border-collapse: collapse;
     margin-top: 1em;
 }
+
+
 
 th, td {
     border: 1px solid #dddddd;
@@ -116,6 +123,10 @@ th {
     margin: 0px 40px
 }
 
+.inputTVA {
+    margin: 0px 40px
+}
+
 input, select {
     padding: 0.5em 30px 7px;
 }
@@ -141,6 +152,109 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+nav {
+    
+    grid-area: nav;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.containerImg {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    margin-top: 1.2rem;
+}
+
+.containerImg img {
+    width: 243px;
+    height: 232px;
+    border-radius: 20%;
+}
+
+.titleJus {
+    z-index: 2;
+    position: absolute;
+    left: 46px;
+    top: 23%;
+    font-size: 35px;
+    color: white;
+    display: none;
+}
+
+.titleEau {
+    z-index: 2;
+    position: absolute;
+    top: 23%;
+    font-size: 35px;
+    color: white;
+    left: 28%;
+    display: none;
+}
+
+.titleRose {
+    z-index: 2;
+    position: absolute;
+    top: 23%;
+    font-size: 35px;
+    color: white;
+    left: 47%;
+    display: none;
+}
+
+.titleCafe {
+    z-index: 2;
+    position: absolute;
+    top: 23%;
+    font-size: 35px;
+    color: white;
+    left: 68%;
+    display: none;
+}
+
+.titleSoda {
+    z-index: 2;
+    position: absolute;
+    top: 23%;
+    font-size: 35px;
+    color: white;
+    left: 88%;
+    display: none;
+
+}
+
+.txtQuantite {
+    position: relative;
+    left: 32px;
+}
+
+.btnJus {
+    position: relative;
+    left: 35%;
+}
+
+.btnEau {
+    position: relative;
+    left: 35%;
+}
+
+.btnRose {
+    position: relative;
+    left: 35%
+}
+
+.btnCafe {
+    position: relative;
+    left: 35%
+}
+
+.btnSoda {
+    position: relative;
+    left: 38%;
+}
+
+
 .container {
     display: grid;
     height: 250vh;
@@ -172,13 +286,16 @@ header {
 
 
 .content2 {
-    border: solid black 3px;
     grid-area: content2;
     border-radius: 10px;
+    height: 395px;
+    overflow: auto;
+    -webkit-box-shadow : 12px 12px 28px 4px rgba(0,0,0,0.41);
+    -moz-box-shadow : 12px 12px 28px 4px rgba(0,0,0,0.41);
+    box-shadow: 12px 12px 28px 4px rgba(0,0,0,0.41) ;
 }
 
 nav {
-    border: solid black 3px;
     grid-area: nav;
     border-radius: 10px;
     
@@ -190,10 +307,16 @@ nav {
 }
 
 footer {
-    border: solid black 3px;
-    grid-area: footer;
-    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    opacity: 30%;
+    border-top: #000000 solid 1px;
+    margin-top: 50px;
 }
 
-
+@media screen and (max-width: 780px) {
+    body {
+        flex-direction: column;
+    }
+}
 

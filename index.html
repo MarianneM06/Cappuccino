@@ -15,10 +15,10 @@
         <div class="container">
             <header>
                 <div class="entête">
-                    <video autoplay muted loop src="./videos/PLAISIR GOURMAND.mp4" type="video/mp4" class="logoClip">
+                    <img class="ImgHeader" src="./logo/logo1.png" alt="">
 
                     </video>
-                    <p>INVENTAIRE</p>
+                    
                     <button class="connected" role="button">Se connecter</button>
                 </div>
                 <video autoplay muted loop id="videoHeader">
@@ -58,11 +58,11 @@
                     <option class="normalTVA">Taux normal : 20 %</option>
                     <option class="intermediateTVA">Taux intermédiaire : 10 %</option>
                     <option class="reducedTVA">Taux réduit : 5.5 %</option>
-                    <option class="very reducedTVA">Taux très réduit : 2.1 %</option>
+                    <option class="veryReducedTVA">Taux très réduit : 2.21 %</option>
                 </select>
 
                 <label class="label" for="category">Degrés d'alcool:</label>
-                <select class="input" id="alcoholLevels" name="alcohoLevels">
+                <select class="input" id="alcoholLevelsContainer" name="alcohoLevels">
                     <option>Sélectionner le degrés d'alcool</option>
                     <option>Faible teneur : entre 0.5 et 1.2%</option>
                     <option>Léger : entre 2 et 4%</option>
@@ -77,38 +77,43 @@
 
             </form>
             <nav>
-                <section class="productContent">
-                    <div class="product">
-                        <img src="" alt="">
-                        <h1>Boisson Gazeuse</h1>
-                        <p class="sodaQuantity">Quantité : </p>
-                        <button class="detailsButton">Détails</button>
+                <div class="containerImg">
+
+                    <div class="childContainer">
+                        <h3 class="titleJus">Jus de Fruits</h3>
+                        <img id="imgJus" src="./stock de projets d'images/jusDeFruit1.jpg" alt="">
+                        <p class="txtQuantite stockJus">Quantité : </p>
+                        <button class="detailsButton btnJus">Détails</button>
                     </div>
-                    <div class="product">
-                        <img src="" alt="">
-                        <h1>Boisson Alcoolisée</h1>
-                        <p class="alcoholQuantity">Quantité : </p>
-                        <button class="detailsButton">Détails</button>
+                    
+                    <div class="childContainer"> 
+                        <h3 class="titleEau">Eau</h3>
+                        <img id="imgEau" src="./stock de projets d'images/bouteille d'eau2.jpg" alt="">
+                        <p class="txtQuantite stockEau">Quantité : </p>
+                        <button class="detailsButton btnEau">Détails</button>
+                    </div> 
+                    
+                    <div class="childContainer"> 
+                        <h3 class="titleRose">Alcool</h3>
+                        <img id="imgRose" src="./stock de projets d'images/boissonAlcool2.jpg" alt="">
+                        <p class="txtQuantite stockAlcool">Quantité : </p>
+                        <button class="detailsButton btnRose">Détails</button>
                     </div>
-                    <div class="product">
-                        <img src="" alt="">
-                        <h1>Jus de fruit</h1>
-                        <p class="juiceQuantity">Quantité : </p>
-                        <button class="detailsButton">Détails</button>
+                    
+                    <div class="childContainer">
+                        <h3 class="titleCafe">Café</h3>
+                        <img id="imgCafe" src="./stock de projets d'images/Café1.jpg" alt="">
+                        <p class="txtQuantite stockCafe">Quantité : </p>
+                        <button class="detailsButton btnCafe">Détails</button>
                     </div>
-                    <div class="product">
-                        <img src="" alt="">
-                        <h1>Eau</h1>
-                        <p class="waterQuantity">Quantité : </p>
-                        <button class="detailsButton">Détails</button>
+                    
+                    <div class="childContainer">
+                        <h3 class="titleSoda">Soda</h3>
+                        <img id="imgSoda" src="./stock de projets d'images/boissonGazeuse4.jpg" alt="">
+                        <p class="txtQuantite stockSoda">Quantité : </p>
+                        <button class="detailsButton btnSoda">Détails</button>
                     </div>
-                    <div class="product">
-                        <img src="" alt="">
-                        <h1>Café</h1>
-                        <p class="coffeeQuantity">Quantité : </p>
-                        <button class="detailsButton">Détails</button>
-                    </div>
-                </section>
+                </div>  
             </nav>
 
             <div class="content2">
@@ -163,9 +168,14 @@
                 </table>
         </div>
 
-        <footer>FOOTER</footer>
+        
+    </main>
 
-
+    <footer>
+        <div class="copyright">
+            <p>PLAISIR GOURMAND © 2024</p>
+        </div>
+    </footer>
         <script src="./index.js"></script>
 </body>
 
