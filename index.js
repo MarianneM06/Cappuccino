@@ -1,20 +1,21 @@
 let drinkName = document.getElementById("drinkName");
 let quantity = document.getElementById("quantity");
-let purchasePrice = document.getElementById("purchasePrice");
+let purchasePriceHT = document.getElementById("purchasePriceHT");
 let marginHT = document.getElementById("marginHT");
-let sellingPrice = document.getElementById("sellingPrice");
+let sellingPriceHT = document.getElementById("sellingPriceHT");
+let sellingPriceTTC;
 let category = document.getElementById("category");
 let alcoholLevels = document.getElementById("alcoholLevels");
-let tableContainer = document.querySelector(".tableContainer"); // Utilisation du point pour sélectionner une classe
+let tableContainer = document.querySelector(".tableContainer"); 
 
-let submitButton = document.querySelector(".submitButton"); // Utilisation du point pour sélectionner une classe
-let detailsButton = document.querySelector(".detailsButton"); // Utilisation du point pour sélectionner une classe
+let submitButton = document.querySelector(".submitButton"); 
+let detailsButton = document.querySelector(".detailsButton"); 
 
 let listproducts;
 
 function stopVideoAfterFirstPlay() {
     let logoClip = document.querySelector(".logoClip");
-    video.removeEventListener("ended", stopVideoAfterFirstPlay); // Correction de la coquille ici
+    video.removeEventListener("ended", stopVideoAfterFirstPlay);
     video.pause();
 }
 
@@ -28,14 +29,18 @@ if (JSON.parse(localStorage.getItem("listproducts"))) {
 submitButton.addEventListener("click", function (event) {
     event.preventDefault();
 
-
-
+    let inputTVA = document.querySelector(".inputTVA");
+    let normalTVA = document.querySelector(".normalTVA");
+    let intermediateTVA = document.querySelector(".intermediateTVA");
+    let reducedTVA = document.querySelector(".reducedTVA"); 
+    let veryReducedTVA = document.querySelector(".veryReducedTVA");
+   
     let product = {
         drinkname: drinkName.value,
         quantity: Math.max(0, quantity.value),
-        purchasePrice: purchasePrice.value,
-        marginHT: sellingPrice.value - purchasePrice.value,
-        sellingPrice: sellingPrice.value,
+        purchasePriceHT: purchasePriceHT.value,
+        marginHT: sellingPriceHT.value - purchasePriceHT.value,
+        sellingPriceHT: sellingPriceHT.value,
         category: category.value,
         alcoholLevels: alcoholLevels.value,
     }
@@ -56,9 +61,9 @@ function renderContact(array) {
         let existingProductIndex = accumulator.findIndex(p => p.drinkname === drinkName);
 
         if (existingProductIndex !== -1) {
-            accumulator[existingProductIndex].quantity += quantity; // Ajoutez la quantité à celle déjà existante
+            accumulator[existingProductIndex].quantity += quantity; 
         } else {
-            accumulator.push({ ...product }); // Ajoutez un nouvel objet pour le produit
+            accumulator.push({ ...product });
         }
 
         return accumulator;
@@ -84,7 +89,8 @@ function renderContact(array) {
         <th>Quantité</th>
         <th>Prix d'achat</th>
         <th>Marge HT</th>
-        <th>Prix de vente</th>
+        <th>Prix de vente HT</th>
+        <th>Prix de vente TTC</th>
         <th>Catégorie</th>
         <th>Degrés d'alcool</th>
         <th>Suppréssion</th>
@@ -105,6 +111,13 @@ function renderContact(array) {
             renderContact(listproducts);
         });
     });
+
+    let changeButton = document.querySelectorAll(".changeButton");
+    changeButton.forEach(function(changeButton) {
+        changeButton.addEventListener("click", function () {
+
+        })
+    })
 }
 
 

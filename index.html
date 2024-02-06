@@ -35,12 +35,12 @@
                 <input class="input" type="number" id="quantity" name="quantity" placeholder="renseignez la quantité"
                     required>
 
-                <label class="label" for="purchasePrice">Prix d'achat:</label>
-                <input class="input" type="number" id="purchasePrice" name="purchase price"
+                <label class="label" for="purchasePriceHT">Prix d'achat HT:</label>
+                <input class="input" type="number" id="purchasePriceHT" name="purchase price"
                     placeholder="Le prix d'achat" required>
 
-                <label class="label" for="selling price">Prix de vente:</label>
-                <input class="input" type="number" id="sellingPrice" name="selling price" placeholder="Le prix de vente"
+                <label class="label" for="selling priceHT">Prix de vente HT:</label>
+                <input class="input" type="number" id="sellingPriceHT" name="selling priceHT" placeholder="Le prix de vente HT"
                     required>
 
                 <label class="label" for="category">Catégorie:</label>
@@ -51,6 +51,14 @@
                     <option class="juice" value="juice">Jus de Fruits</option>
                     <option class="water" value="water">Eau</option>
                     <option class="coffee" value="coffee">Café</option>
+                </select>
+
+                <label class="label" for="TVA">Pourcentage de TVA</label>
+                <select class="inputTVA" id="TVA" name="TVA">
+                    <option class="normalTVA">Taux normal : 20 %</option>
+                    <option class="intermediateTVA">Taux intermédiaire : 10 %</option>
+                    <option class="reducedTVA">Taux réduit : 5.5 %</option>
+                    <option class="very reducedTVA">Taux très réduit : 2.1 %</option>
                 </select>
 
                 <label class="label" for="category">Degrés d'alcool:</label>
@@ -106,7 +114,7 @@
             <div class="content2">
                 <table>
             
-                    </thead>
+                    
 
                     <tbody class="tableContainer">
                         <tr>
