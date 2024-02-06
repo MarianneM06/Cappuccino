@@ -39,9 +39,6 @@
                 <input class="input" type="number" id="purchasePrice" name="purchase price"
                     placeholder="Le prix d'achat" required>
 
-                <label class="label" for="marginHT">Marge HT:</label>
-                <input class="input" type="number" id="marginHT" name="marginHT" placeholder="La marge HT" required>
-
                 <label class="label" for="selling price">Prix de vente:</label>
                 <input class="input" type="number" id="sellingPrice" name="selling price" placeholder="Le prix de vente"
                     required>
@@ -49,11 +46,11 @@
                 <label class="label" for="category">Catégorie:</label>
                 <select class="input" id="category" name="category">
                     <option value="selection">Sélectionner la catégorie</option>
-                    <option value="soda">Boisson Gazeuse</option>
-                    <option value="Alcool">Boisson Alcoolisée</option>
-                    <option value="juice">Jus de Fruits</option>
-                    <option value="water">Eau</option>
-                    <option value="coffee">Café</option>
+                    <option class="soda" value="soda">Boisson Gazeuse</option>
+                    <option class="alcool"value="Alcool">Boisson Alcoolisée</option>
+                    <option class="juice" value="juice">Jus de Fruits</option>
+                    <option class="water" value="water">Eau</option>
+                    <option class="coffee" value="coffee">Café</option>
                 </select>
 
                 <label class="label" for="category">Degrés d'alcool:</label>
@@ -108,18 +105,7 @@
 
             <div class="content2">
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Marque</th>
-                            <th>Quantité</th>
-                            <th>Prix d'achat</th>
-                            <th>Marge HT</th>
-                            <th>Prix de vente</th>
-                            <th>Catégorie</th>
-                            <th>Degrés d'alcool</th>
-                            <th></th>
-                        </tr>
-
+            
                     </thead>
 
                     <tbody class="tableContainer">

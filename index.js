@@ -34,7 +34,7 @@ submitButton.addEventListener("click", function (event) {
         drinkname: drinkName.value,
         quantity: Math.max(0, quantity.value),
         purchasePrice: purchasePrice.value,
-        marginHT: marginHT.value,
+        marginHT: sellingPrice.value - purchasePrice.value,
         sellingPrice: sellingPrice.value,
         category: category.value,
         alcoholLevels: alcoholLevels.value,
@@ -46,30 +46,65 @@ submitButton.addEventListener("click", function (event) {
     renderContact(listproducts);
 });
 
+
+
 function renderContact(array) {
-    let tr = "";
-    array.forEach(function (product, index) {
-        tr = tr + `<td> ${product.drinkname} ${product.quantity} ${product.purchasePrice} € ${product.marginHT} € ${product.sellingPrice} € ${product.category} ${product.alcoholLevels} <button class="deleteButton">Supprimer</button></tr>`
-        
+    let groupedProducts = array.reduce((accumulator, product) => {
+        let drinkName = product.drinkname;
+        let quantity = parseInt(product.quantity, 10);
+
+        let existingProductIndex = accumulator.findIndex(p => p.drinkname === drinkName);
+
+        if (existingProductIndex !== -1) {
+            accumulator[existingProductIndex].quantity += quantity; // Ajoutez la quantité à celle déjà existante
+        } else {
+            accumulator.push({ ...product }); // Ajoutez un nouvel objet pour le produit
+        }
+
+        return accumulator;
+    }, []);
+
+    let tableRows = "";
+    groupedProducts.forEach(function (product, index) {
+        tableRows += `<tr>
+        <td>${product.drinkname}</td>
+        <td>${product.quantity}</td>
+        <td>${product.purchasePrice}</td>
+        <td>${product.marginHT}</td> 
+        <td>${product.sellingPrice}</td> 
+        <td>${product.category}</td> 
+        <td>${product.alcoholLevels}</td>
+        <td><button class="deleteButton" data-index="${index}">Supprimer</button></td>
+        <td><button class="changeButton" data-index="${index}">Modifier</button></td>
+        </tr>`;
     });
-    tableContainer.innerHTML = tr;
+
+    let tableHeader = `<tr>
+        <th>Marque</th>
+        <th>Quantité</th>
+        <th>Prix d'achat</th>
+        <th>Marge HT</th>
+        <th>Prix de vente</th>
+        <th>Catégorie</th>
+        <th>Degrés d'alcool</th>
+        <th>Suppréssion</th>
+        <th>Modification</th>
+
+    </tr>`;
+
+    let tableContent = `<table>${tableHeader}${tableRows}</table>`;
+
+    tableContainer.innerHTML = tableContent;
 
     let deleteButtonArray = document.querySelectorAll(".deleteButton");
-    deleteButtonArray.forEach(function(deleteButton, index) {
+    deleteButtonArray.forEach(function(deleteButton) {
         deleteButton.addEventListener("click", function () {
-            listproducts.splice(index, 1)
-            localStorage.setItem("listproduct", JSON.stringify(listproducts));
+            let index = parseInt(deleteButton.dataset.index);
+            listproducts.splice(index, 1);
+            localStorage.setItem("listproducts", JSON.stringify(listproducts));
             renderContact(listproducts);
-        })
-    })
-}
-
-function calculateMarginHT(purchasePrice, sellingPrice) {
-   
-    purchasePrice = parseFloat(purchasePrice);
-    sellingPrice = parseFloat(sellingPrice);
-
-    return (sellingPrice - purchasePrice).toFixed(2);
+        });
+    });
 }
 
 
