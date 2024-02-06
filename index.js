@@ -9,14 +9,15 @@ let labelalcoholLvl = document.getElementById("labelalcoholLvl");
 let listproduct;
 let submitButton = document.querySelector(".submitButton");
 let childContainer = document.querySelector(".childContainer");
-let stockJus = document.querySelector(".stockJus");
-let stockEau = document.querySelector(".stockEau");
+// let stockJus = document.querySelector(".stockJus");
+
 
 
 
 // creation du bouton supprimer
 let deleteButton = document.createElement("button");
 let supprimer = document.querySelector(".supprimer");
+
 
 
 
@@ -28,6 +29,9 @@ if (JSON.parse(localStorage.getItem("listproduct"))) {
    listproduct = [];
 }
 
+
+
+
 function deleteRaw() {
    
         deleteButton.addEventListener("click", () => {
@@ -35,6 +39,7 @@ function deleteRaw() {
             if (window.confirm("Voulez vous supprimer cet article du stock ?")) {
                 
             }
+
 
             })
     
@@ -71,6 +76,7 @@ function addRaw() {
         
         cel8.appendChild(deleteButton);
         deleteRaw();
+        
     
     
 }
@@ -80,42 +86,155 @@ function addRaw() {
 displayAlcoolLvl();
 
 // Creation de l'evenement click sur boutton du form 
-submitButton.addEventListener("click", (event) => {
-    // on empeche de recharger la page
-    event.preventDefault()
-
-    // on ajoute a info prduit (InfoProduct) les valeurs récupérées du form
-    const infoProduct = new InfoProduct(drinkname.value, quantity.value, purchasePrice.value, marginHT.value, sellingPrice.value, category.value, alcoholLevels.value);
-    // on appelle la fonction InfoProduct dans notre evenement "click" avec les valeurs récupérées de la varible (let infoProduct)
-    InfoProduct(drinkname, quantity, purchasePrice, marginHT, sellingPrice, category);
+   
     
-    // alert si valeur inferieur à 0  
-    if(quantity.value < 0 || purchasePrice.value < 0 || marginHT.value < 0 || sellingPrice.value < 0 ) {
-        alert("Vous devez saisir un nombre supérieur à 0")
-    } else {
-        listproduct.push(infoProduct);
-        // on l'ajoute dans le tableau listProduct
-        localStorage.setItem("listproduct", JSON.stringify(listproduct));
-    }
-    
-     // on affiche le selecteur du degré d'alcool
-    displayAlcoolLvl();
 
-    addRaw();
+    submitButton.addEventListener("click", (event) => {
+        // on empeche de recharger la page
+        event.preventDefault()
 
-    
-});
+        // on ajoute a info prduit (InfoProduct) les valeurs récupérées du form
+        const infoProduct = new InfoProduct(drinkname.value, quantity.value, purchasePrice.value, marginHT.value, sellingPrice.value, category.value, alcoholLevels.value);
+        // on appelle la fonction InfoProduct dans notre evenement "click" avec les valeurs récupérées de la varible (let infoProduct)
+        InfoProduct(drinkname, quantity, purchasePrice, marginHT, sellingPrice, category);
+        
+        // alert si valeur inferieur à 0  
+        if(quantity.value < 0 || purchasePrice.value < 0 || marginHT.value < 0 || sellingPrice.value < 0 ) {
+            alert("Vous devez saisir un nombre supérieur à 0")
+        } else {
+            listproduct.push(infoProduct);
+            // on l'ajoute dans le tableau listProduct
+            localStorage.setItem("listproduct", JSON.stringify(listproduct));
+        }
+        
+        // on affiche le selecteur du degré d'alcool
+        displayAlcoolLvl();
+
+        
+            
+        
+
+            if (category.value === "soda") {
+                // soda.quantited += quantity.value
+                let totalSoda = (soda.quantite) += parseInt(quantity.value);
+                stockSoda.innerHTML += `${totalSoda}`
+
+                
+            }
+
+            if (category.value === "water") {
+                // soda.quantite += quantity.value
+                stockEau.innerHTML += `${water.quantite += quantity.value}`
+            }
+
+            if (category.value === "juice") {
+                // soda.quantite += quantity.value
+                stockJus.innerHTML += `${juice.quantite += quantity.value}`
+            }
+
+            if (category.value === "Alcool") {
+                // soda.quantite += quantity.value
+                stockAlcool.innerHTML += `${alcool.quantite += quantity.value}`
+            }
+
+            if (category.value === "coffee") {
+                // soda.quantite += quantity.value
+                
+                stockCafe.innerHTML += `${coffee.quantite += quantity.value}`
+                
+            }
+
+
+
+        addRaw();
+        
+
+
+        
+    });
+
+
 
 // Creation fonction constructeur info produits
 function InfoProduct(drinkname, quantity, purchasePrice, marginHT, sellingPrice, category, alcoholLevels) {
     this.nom = drinkname;
-    this.quantite = quantity;
+    this.quantite = Math.max(0),quantity;
     this.prixAchat = purchasePrice;
     this.marginHt = marginHT;
     this.prixDevente = sellingPrice;
     this.categorie = category;
     this.alcoholLvl = alcoholLevels;
 };
+
+// appel des classes quantité de l'html  
+let stockJus = document.querySelector(".stockJus");
+let stockEau = document.querySelector(".stockEau");
+let stockAlcool = document.querySelector(".stockAlcool");
+let stockCafe = document.querySelector(".stockCafe");
+let stockSoda = document.querySelector(".stockSoda");
+
+// creation d'objet par catégorie
+let juice = {
+    marque: drinkname.value,
+    quantite: Math.max(0),quantity,
+    prixAchat: purchasePrice.value,
+    marginHt: marginHT.value,
+    prixDeVente: sellingPrice,
+    categorie: "Jus",
+    alcoholLevels: "AUCUN",
+}
+
+
+
+let soda = {
+    marque: drinkname.value,
+    quantite: Math.max(quantity.value),
+    prixAchat: purchasePrice.value,
+    marginHt: marginHT.value,
+    prixDeVente: sellingPrice,
+    categorie: "Soda",
+    alcoholLevels: "AUCUN",
+}
+
+
+let alcool = {
+    marque: drinkname.value,
+    quantite: Math.max(0),quantity,
+    prixAchat: purchasePrice.value,
+    marginHt: marginHT.value,
+    prixDeVente: sellingPrice,
+    categorie: "Alcool",
+    alcoholLvl: alcoholLevels.value,
+}
+
+
+
+
+let water = {
+    marque: drinkname.value,
+    quantite: Math.max(0),quantity,
+    prixAchat: purchasePrice.value,
+    marginHt: marginHT.value,
+    prixDeVente: sellingPrice,
+    categorie: "Eau",
+    alcoholLvl: "Aucun"
+}
+
+
+
+
+let coffee = {
+    marque: drinkname.value,
+    quantite: Math.min(0),quantity,
+    prixAchat: purchasePrice.value,
+    marginHt: marginHT.value,
+    prixDeVente: sellingPrice,
+    categorie: "Café",
+    alcoholLvl: "Aucun"
+}
+
+
+
 
 // creation de la fonction pour afficher le degré d'alcool si c'est une boisson alcoolisée
 function displayAlcoolLvl() {
@@ -205,9 +324,5 @@ btnJus.addEventListener("click", () => {
 
 
 
-function quantiteJus () {
-    if(category.value === "Jus de Fruits") {
-        
-    }
-}
+
 
