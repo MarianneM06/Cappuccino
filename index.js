@@ -74,9 +74,10 @@ function renderContact(array) {
         tableRows += `<tr>
         <td>${product.drinkname}</td>
         <td>${product.quantity}</td>
-        <td>${product.purchasePrice}</td>
+        <td>${product.purchasePriceHT}</td>
         <td>${product.marginHT}</td> 
-        <td>${product.sellingPrice}</td> 
+        <td>${product.sellingPriceHT}</td>
+        <td>${product.sellingPriceHT}</td>
         <td>${product.category}</td> 
         <td>${product.alcoholLevels}</td>
         <td><button class="deleteButton" data-index="${index}">Supprimer</button></td>
